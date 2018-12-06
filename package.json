@@ -1,0 +1,28 @@
+{
+  "name": "team-cli",
+  "version": "1.0.0",
+  "description": "Automate all the things with a team-centric CLI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "productivity"
+  ],
+  "author": "Joe Wroten <joe@wroten.me> (https://www.wroten.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "winston": "^3.1.0",
+    "winston-daily-rotate-file": "^3.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
