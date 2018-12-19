@@ -1,6 +1,6 @@
 {
   "name": "team-cli",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Automate all the things with a team-centric CLI.",
   "main": "index.js",
   "scripts": {
