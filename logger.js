@@ -3,10 +3,10 @@ const { createLogger, format, transports } = require('winston')
 require('winston-daily-rotate-file')
 const { combine, timestamp, printf, colorize } = format
 
-const _logger = createLogger()
+const logger = createLogger()
 
 const _init = (logPath) => {
-  _logger.configure({
+  logger.configure({
     level: process.env.LOG_LEVEL || 'info',
     format: format.combine(
       timestamp(),
@@ -26,7 +26,7 @@ const _init = (logPath) => {
       }),
     ],
   })
-  _logger.add(new transports.Console({
+  logger.add(new transports.Console({
     format: combine(
       colorize(),
       printf(info => `[${info.level}] ${info.message}`)
@@ -40,6 +40,6 @@ const consoleTip = (...logItems) => {
 
 module.exports = {
   _init,
-  _logger,
+  logger,
   consoleTip,
 }
