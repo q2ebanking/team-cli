@@ -13,6 +13,7 @@
   "author": "Joe Wroten <joe@wroten.me> (https://www.wroten.me/)",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "winston": "^3.1.0",
     "winston-daily-rotate-file": "^3.5.1"
