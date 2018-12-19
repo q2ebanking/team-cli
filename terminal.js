@@ -1,6 +1,6 @@
 const path = require('path')
 const { platform } = require('os')
-const { _logger } = require('./logger')
+const { logger } = require('./logger')
 const { spawn } = require('child_process')
 
 const terminal = platform() === 'win32' ? 'powershell.exe' : 'bash'
@@ -11,19 +11,19 @@ const _cleanDataBuffer = dataBuffer => dataBuffer.toString('utf8').trim()
 const _logBuffer = (dataBuffer, isError) => {
   let lineItem = _cleanDataBuffer(dataBuffer)
   if (lineItem.length > 0) {
-    if (isError) _logger.error(lineItem)
-    else if (isVerbose) _logger.verbose(lineItem)
+    if (isError) logger.error(lineItem)
+    else if (isVerbose) logger.verbose(lineItem)
   }
 }
 
 const run = async (script, args, cwd) => {
   return new Promise((resolve, reject) => {
-    let profiler = _logger.startTimer()
+    let profiler = logger.startTimer()
     let stdio = isVerbose ? ['inherit', 'pipe', 'pipe'] : 'inherit'
     cwd = cwd || path.dirname(script)
     let spawnParams = { shell: true, stdio, cwd }
 
-    _logger.info(`Starting \`${script}\``)
+    logger.info(`Starting \`${script}\``)
     let term = spawn(terminal, [script, args], spawnParams)
 
     if (isVerbose) {
