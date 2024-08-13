@@ -1,3 +1,6 @@
+# THIS PROJECT IS ARCHIVED AND NO LONGER MAINTAINED
+
+
 # team-cli
 
 [![npm version](https://badge.fury.io/js/team-cli.svg)](https://badge.fury.io/js/team-cli)
